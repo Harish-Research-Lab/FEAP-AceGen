@@ -1,6 +1,6 @@
 # Elements for coupled problems
 
-This repository is a collection of elements for <a href="http://projects.ce.berkeley.edu/feap/" target="_blank">FEAP</a> to help address coupled problems. The elements, provided here are generated using <a href = "http://symech.fgg.uni-lj.si/" target="_blank">AceGen</a>. AceGen is available as an add-on for Mathematica and facilitates the automatic generation of user elements using an automatic differentiation approach. A detailed discussion on AceGen can be found in the work of Korelc and Wriggers [1]. The FEAP programmer manual [2] [@feapp] outlines the usage of user element in FEAP and user issues can be addressed through the FEAP Forum [3]. 
+This repository is a collection of elements for <a href="http://projects.ce.berkeley.edu/feap/" target="_blank">FEAP</a> to help address coupled problems. The elements, provided here are generated using <a href = "http://symech.fgg.uni-lj.si/" target="_blank">AceGen</a>. AceGen is available as an add-on for Mathematica and facilitates the automatic generation of user elements using an automatic differentiation approach. A detailed discussion on AceGen can be found in the work of Korelc and Wriggers [1]. The FEAP programmer manual [2] outlines the usage of user element in FEAP and user issues can be addressed through the FEAP Forum [3]. 
 
 ## Folder structure
 
@@ -11,7 +11,7 @@ This repository is a collection of elements for <a href="http://projects.ce.berk
 ## Poro-elasticity
 
 ### Q9/Q4 Taylor-Hood element
-This 2-D nine-noded element is developed as a part of the work [4][^4] presented as a part of the Festschrift on the occasion of the 70th birthday of <a href="https://www.ikm.uni-hannover.de/de/wriggers/" target="_blank">Prof. Peter Wriggers</a>.
+This 2-D nine-noded element is developed as a part of the work [4] presented as a part of the Festschrift on the occasion of the 70th birthday of <a href="https://www.ikm.uni-hannover.de/de/wriggers/" target="_blank">Prof. Peter Wriggers</a>.
 
 ![Q9/Q4 Taylor-Hood element topology](common/images/Q9Q4-TH_small.png "Q9/Q4 Taylor-Hood element")
 
@@ -37,5 +37,3 @@ For help on compiling FEAP on Windows
 3. FEAP user forum, http://feap.berkeley.edu/forum/index.php
 
 4. A. B. Harish, R. L. Taylor and S. Govindjee, "A Poroelastic Element for FEAP Using AceGen," Festschrift on the occasion of 70th Birthday of Peter Wriggers (Coming soon)
-
-[^4] A. B. Harish, R. L. Taylor and S. Govindjee, "A Poroelastic Element for FEAP Using AceGen," Festschrift on the occasion of 70th Birthday of Peter Wriggers (Coming soon)
