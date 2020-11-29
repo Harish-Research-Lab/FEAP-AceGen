@@ -21,7 +21,7 @@ The element topology is as shown below. It utilizes a Q9/Q4 Taylor-Hood type int
 
 1. The mathematica files are available in the folder **Phenomena/Element-Type**. <code>*</code>
 
-2. This is \*\
+2. This is \*
 
 # Running the elements with FEAP
 
