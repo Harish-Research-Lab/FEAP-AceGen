@@ -9,6 +9,8 @@ This 2-D nine-noded element is developed as a part of the work [4] presented as 
 
 ![Q9/Q4 Taylor-Hood element topology](common/images/Q9Q4-TH.png "Q9/Q4 Taylor-Hood element")
 
+![](common/images/Q9Q4-TH.png =250x)
+
 It uses bi-quadratic interpolation functions for the displacement d.o.f's and linear interpolation functions for the pressure d.o.f's.
 
 # Running the elements with FEAP
