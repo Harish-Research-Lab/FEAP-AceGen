@@ -6,7 +6,7 @@ This repository is a collection of elements for <a href="http://projects.ce.berk
 
 1. **Multiphysics phenomena (Poroelastic, Thermoelastic etc.):** The folder contains elements developed to address the particular phenomenon. Each element type uses a sub-folder of its own where the relates AceGen file, generated FEAP element and FEAP input file for examples are provided.
 
-2. **dependencies:**
+2. **dependencies:** Include the files required for generating the FEAP element with AceGen and also running the generated elements. More information on its usage is outlined below.
 
 ## Poro-elasticity
 
@@ -18,7 +18,10 @@ This 2-D nine-noded element is developed as a part of the work [4] presented as 
 The element topology is as shown below. It utilizes a Q9/Q4 Taylor-Hood type interpolation for the u/p dependent variables, respectively.
 
 # Generating the elements with AceGen
-The mathematica files *.nb
+
+1. The mathematica files are available in the folder **Phenomena/Element-Type**. <code>*</code>
+
+2. This is \`*\`
 
 # Running the elements with FEAP
 
