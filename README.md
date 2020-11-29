@@ -1,15 +1,18 @@
 # Elements for coupled problems
 
-This repository is a collection of elements for <a href="http://projects.ce.berkeley.edu/feap/" target="_blank">FEAP</a> to help address coupled problems. The elements, provided here are generated using <a href = "http://symech.fgg.uni-lj.si/" target="_blank">AceGen</a>. AceGen is available as an add-on for Mathematica and facilitates the automatic generation of user elements using an automatic differentiation approach. A detailed discussion on AceGen can be found in the work of Korelc and Wriggers [1].
+This repository is a collection of elements for <a href="http://projects.ce.berkeley.edu/feap/" target="_blank">FEAP</a> to help address coupled problems. The elements, provided here are generated using <a href = "http://symech.fgg.uni-lj.si/" target="_blank">AceGen</a>. AceGen is available as an add-on for Mathematica and facilitates the automatic generation of user elements using an automatic differentiation approach. A detailed discussion on AceGen can be found in the work of Korelc and Wriggers [1]. The FEAP programmer manual [2] outlines the usage of user element in FEAP and user issues can be addressed through the FEAP Forum [3]. 
 
 ## Poro-elasticity
 
 ### Q9/Q4 Taylor-Hood element
-This 2-D nine-noded element is developed as a part of the work [4] presented as a part of the Festschrift on the occasion of the 70th birthday of <a href="https://www.ikm.uni-hannover.de/de/wriggers/" target="_blank">Prof. Peter Wriggers</a>. The element topology is as shown below.
+This 2-D nine-noded element is developed as a part of the work [4] presented as a part of the Festschrift on the occasion of the 70th birthday of <a href="https://www.ikm.uni-hannover.de/de/wriggers/" target="_blank">Prof. Peter Wriggers</a>.
 
 ![Q9/Q4 Taylor-Hood element topology](common/images/Q9Q4-TH_small.png "Q9/Q4 Taylor-Hood element")
 
-It uses bi-quadratic interpolation functions for the displacement d.o.f's and linear interpolation functions for the pressure d.o.f's.
+The element topology is as shown below. It uses bi-quadratic interpolation functions for the displacement d.o.f's and linear interpolation functions for the pressure d.o.f's.
+
+# Generating the elements with AceGen
+The mathematica files *.nb
 
 # Running the elements with FEAP
 For help on compiling FEAP on Mac or Linux
