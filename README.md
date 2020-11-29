@@ -2,6 +2,12 @@
 
 This repository is a collection of elements for <a href="http://projects.ce.berkeley.edu/feap/" target="_blank">FEAP</a> to help address coupled problems. The elements, provided here are generated using <a href = "http://symech.fgg.uni-lj.si/" target="_blank">AceGen</a>. AceGen is available as an add-on for Mathematica and facilitates the automatic generation of user elements using an automatic differentiation approach. A detailed discussion on AceGen can be found in the work of Korelc and Wriggers [1]. The FEAP programmer manual [2] outlines the usage of user element in FEAP and user issues can be addressed through the FEAP Forum [3]. 
 
+## Folder structure
+
+1. **Multiphysics phenomena (Poroelastic, Thermoelastic etc.):** The folder contains elements developed to address the particular phenomenon. Each element type uses a sub-folder of its own where the relates AceGen file, generated FEAP element and FEAP input file for examples are provided.
+
+2. **dependencies:**
+
 ## Poro-elasticity
 
 ### Q9/Q4 Taylor-Hood element
@@ -9,7 +15,7 @@ This 2-D nine-noded element is developed as a part of the work [4] presented as 
 
 ![Q9/Q4 Taylor-Hood element topology](common/images/Q9Q4-TH_small.png "Q9/Q4 Taylor-Hood element")
 
-The element topology is as shown below. It uses bi-quadratic interpolation functions for the displacement d.o.f's and linear interpolation functions for the pressure d.o.f's.
+The element topology is as shown below. It utilizes a Q9/Q4 Taylor-Hood type interpolation for the u/p dependent variables, respectively.
 
 # Generating the elements with AceGen
 The mathematica files *.nb
