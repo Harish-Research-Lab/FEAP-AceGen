@@ -21,13 +21,10 @@ The element topology is as shown below. It utilizes a Q9/Q4 Taylor-Hood type int
 The mathematica files *.nb
 
 # Running the elements with FEAP
-For help on compiling FEAP on Mac or Linux
 
-[![Compile FEAP on Mac/Linux](http://img.youtube.com/vi/_ohQ__rqq3Y/0.jpg)](http://www.youtube.com/watch?v=_ohQ__rqq3Y)
+1. Check out the Youtube videos for help on compiling FEAP on <a href="https://www.youtube.com/watch?v=_ohQ__rqq3Y"> Mac or Linux</a> or <a href="http://www.youtube.com/watch?v=7QAh6QvOT6s">Windows</a>
 
-For help on compiling FEAP on Windows
-
-[![Compile FEAP on Windows](http://img.youtube.com/vi/7QAh6QvOT6s/0.jpg)](http://www.youtube.com/watch?v=7QAh6QvOT6s)
+2. 
 
 # References
 1. J. Korelc and P. Wriggers, "Automation of Finite Element Methods," Springer International Publishing, Switzerland (2016)
