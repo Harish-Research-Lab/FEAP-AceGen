@@ -1,13 +1,13 @@
 # Elements for coupled problems
 
-This repository is a collection of elements for <a href="http://projects.ce.berkeley.edu/feap/">FEAP</a> to help address coupled problems. The elements, provided here are generated using <a href = "http://symech.fgg.uni-lj.si/">AceGen</a>. AceGen is available as an add-on for Mathematica and facilitates the automatic generation of user elements using an automatic differentiation approach. A detailed 
+This repository is a collection of elements for <a href="http://projects.ce.berkeley.edu/feap/" target="_blank">FEAP</a> to help address coupled problems. The elements, provided here are generated using <a href = "http://symech.fgg.uni-lj.si/" target="_blank">AceGen</a>. AceGen is available as an add-on for Mathematica and facilitates the automatic generation of user elements using an automatic differentiation approach. A detailed 
 
-# Poro-elasticity
+## Poro-elasticity
 
 ### Q9/Q4 Taylor-Hood element
-This element is developed as a part of the work [4] presented as a part of the Festschrift on the occasion of the 70th birthday of <a href="https://www.ikm.uni-hannover.de/de/wriggers/">Prof. Peter Wriggers</a>. 
+This element is developed as a part of the work [4] presented as a part of the Festschrift on the occasion of the 70th birthday of <a href="https://www.ikm.uni-hannover.de/de/wriggers/" target="_blank">Prof. Peter Wriggers</a>. 
 
-# Running these elements using FEAP
+# Running the elements with FEAP
 For help on compiling FEAP on Mac or Linux
 
 [![Compile FEAP on Mac/Linux](http://img.youtube.com/vi/_ohQ__rqq3Y/0.jpg)](http://www.youtube.com/watch?v=_ohQ__rqq3Y)
