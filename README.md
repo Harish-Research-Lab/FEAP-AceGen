@@ -30,10 +30,10 @@ The element topology is as shown below. It utilizes a Q9/Q4 Taylor-Hood type int
 2. 
 
 # References
-1. J. Korelc and P. Wriggers, "Automation of Finite Element Methods," Springer International Publishing, Switzerland (2016)
+1. J. Korelc and P. Wriggers, "Automation of Finite Element Methods," Springer International Publishing, Switzerland (2016) [<a href="https://www.springer.com/gp/book/9783319390031">Link</a>]
 
-2. FEAP programmer manual, http://projects.ce.berkeley.edu/feap/pmanual_86.pdf
+2. <a href=http://projects.ce.berkeley.edu/feap/pmanual_86.pdf>FEAP programmer manual</a>
 
-3. FEAP user forum, http://feap.berkeley.edu/forum/index.php
+3. <a href=http://feap.berkeley.edu/forum/index.php>FEAP user forum</a>
 
-4. A. B. Harish, R. L. Taylor and S. Govindjee, "A Poroelastic Element for FEAP Using AceGen," Festschrift on the occasion of 70th Birthday of Peter Wriggers (Coming soon)
+4. A. B. Harish, R. L. Taylor and S. Govindjee, "A Poroelastic Element for FEAP Using AceGen," Current Trends and Open Problems in Computational Mechanics, Springer (2020) [Link]
