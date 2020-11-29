@@ -7,9 +7,7 @@ This repository is a collection of elements for <a href="http://projects.ce.berk
 ### Q9/Q4 Taylor-Hood element
 This 2-D nine-noded element is developed as a part of the work [4] presented as a part of the Festschrift on the occasion of the 70th birthday of <a href="https://www.ikm.uni-hannover.de/de/wriggers/" target="_blank">Prof. Peter Wriggers</a>. The element topology is as shown below.
 
-![Q9/Q4 Taylor-Hood element topology](common/images/Q9Q4-TH.png "Q9/Q4 Taylor-Hood element")
-
-![](common/images/Q9Q4-TH.png =250x)
+![Q9/Q4 Taylor-Hood element topology](common/images/Q9Q4-TH_small.png "Q9/Q4 Taylor-Hood element")
 
 It uses bi-quadratic interpolation functions for the displacement d.o.f's and linear interpolation functions for the pressure d.o.f's.
 
