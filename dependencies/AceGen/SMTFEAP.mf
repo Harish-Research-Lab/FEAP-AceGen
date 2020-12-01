@@ -1,6 +1,6 @@
 ""<*allFunctionNames=#[[1,1]]&/@SMSFunctions;" "*>""
 !$Id:$
-      subroutine ""<*SMSSubroutineName["elmt"]*>""(d,ul,xl,ix,tl,s,p,ndf,ndm,nst,isw)
+      subroutine elmt10 (d,ul,xl,ix,tl,s,p,ndf,ndm,nst,isw)
 
 !      * * F E A P * * A Finite Element Analysis Program
 
@@ -105,7 +105,16 @@
         m(:,:) = 0.0d0
         r(:)   = 0.0d0
 !       Form arrays from AceGen
-        call ""<*SMSSubroutineName["SKR"]*>""(v,d,ua,xl,k,c,m,r,hr(nh1),hr(nh2),dofacegen) 
+        if(nen.eq.4) then
+          call int2d(2,ngpo,sg2)
+          gp(1:2,1:ngpo) = sg2(1:2,1:ngpo)
+          gp(4,1:ngpo) = sg2(3,1:ngpo)
+        elseif(nen.eq.9) then
+          call int2d(3,ngpo,sg2)
+          gp(1:2,1:ngpo) = sg2(1:2,1:ngpo)
+          gp(4,1:ngpo) = sg2(3,1:ngpo)
+        endif
+        call SKR10(v,d,xl,ua,k,c,m,r,,hr(nh1),hr(nh2),gp,ngpo) 
         if(debug) then
           call mprint(k,dofacegen,dofacegen,dofacegen,'ACE_K')
           call mprint(c,dofacegen,dofacegen,dofacegen,'ACE_C')
@@ -129,19 +138,4 @@
       elseif(isw.eq.14) then               ! Set non-zero history values
       endif
 
-      end subroutine ""<*SMSSubroutineName["elmt"]*>""
-
-
-!******************* S U B R O U T I N E **********************
-      SUBROUTINE SKR10(v,d,ul,xl,s,c,m,p,ht,hp,ig)
-      IMPLICIT NONE
-      INTEGER i1,ig
-      DOUBLE PRECISION v(<*SMSWorkLength*>),d(*),ul(6,*),xl(<*SMSNoDimensions*>,*)
-     &,s(ig,ig),c(ig,ig),m(ig,ig),p(ig),ht(*),hp(*)
-
-      INTEGER          ngpo
-      DOUBLE PRECISION sg2(3,9), gp(4,9)
-      
-      call int2d(3,ngpo,sg2)
-      gp(1:2,1:ngpo) = sg2(1:2,1:ngpo)
-      gp(4,1:ngpo) = sg2(3,1:ngpo)
+      end subroutine elmt10

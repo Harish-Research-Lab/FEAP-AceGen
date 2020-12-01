@@ -1,18 +1,18 @@
 !**************************************************************
 !* AceGen    7.114 MacOSX (14 Jul 20)                         *
-!*           Co. J. Korelc  2020           26 Nov 20 01:17:46 *
+!*           Co. J. Korelc  2020           1 Dec 20 00:50:34  *
 !**************************************************************
 ! User     : Full professional version
-! Notebook : PoroTH_v1
-! Evaluation time                 : 31 s    Mode  : Optimal
+! Notebook : Q9Q4-TH
+! Evaluation time                 : 37 s    Mode  : Optimal
 ! Number of formulae              : 502     Method: Automatic
 ! Subroutine                      : SKR10 size: 19989
 ! Total size of Mathematica  code : 19989 subexpressions
-! Total size of Fortran code      : 66524 bytes
+! Total size of Fortran code      : 66555 bytes
 
  
 !$Id:$
-      subroutine elmt10(d,ul,xl,ix,tl,s,p,ndf,ndm,nst,isw)
+      subroutine elmt10 (d,ul,xl,ix,tl,s,p,ndf,ndm,nst,isw)
 
 !      * * F E A P * * A Finite Element Analysis Program
 
@@ -89,7 +89,7 @@
       enddo
 
       if(isw.lt.0) then
-        utx(1) = "PoroTH_v1"
+        utx(1) = "Q9Q4-TH"
 
       elseif(isw.eq.1) then                ! Input material set data
         pstyp = ndm                        ! Sets plot dimension (1,2,3)
@@ -128,7 +128,16 @@
         m(:,:) = 0.0d0
         r(:)   = 0.0d0
 !       Form arrays from AceGen
-        call SKR10(v,d,ua,xl,k,c,m,r,hr(nh1),hr(nh2),dofacegen) 
+        if(nen.eq.4) then
+          call int2d(2,ngpo,sg2)
+          gp(1:2,1:ngpo) = sg2(1:2,1:ngpo)
+          gp(4,1:ngpo) = sg2(3,1:ngpo)
+        elseif(nen.eq.9) then
+          call int2d(3,ngpo,sg2)
+          gp(1:2,1:ngpo) = sg2(1:2,1:ngpo)
+          gp(4,1:ngpo) = sg2(3,1:ngpo)
+        endif
+        call SKR10(v,d,xl,ua,k,c,m,r,,hr(nh1),hr(nh2),gp,ngpo) 
         if(debug) then
           call mprint(k,dofacegen,dofacegen,dofacegen,'ACE_K')
           call mprint(c,dofacegen,dofacegen,dofacegen,'ACE_C')
@@ -156,19 +165,12 @@
 
 
 !******************* S U B R O U T I N E **********************
-      SUBROUTINE SKR10(v,d,ul,xl,s,c,m,p,ht,hp,ig)
+      SUBROUTINE SKR10(v,d,xl,ul,s,c,m,p,ht,hp,gp,ngpo)
       IMPLICIT NONE
-      INTEGER i1,ig
-      DOUBLE PRECISION v(1480),d(*),ul(6,*),xl(2,*)
-     &,s(ig,ig),c(ig,ig),m(ig,ig),p(ig),ht(*),hp(*)
-
-      INTEGER          ngpo
-      DOUBLE PRECISION sg2(3,9), gp(4,9)
-      
-      call int2d(3,ngpo,sg2)
-      gp(1:2,1:ngpo) = sg2(1:2,1:ngpo)
-      gp(4,1:ngpo) = sg2(3,1:ngpo)
-
+      include 'sms.h'
+      INTEGER ngpo,i1
+      DOUBLE PRECISION v(1480),d(6),xl(2,9),ul(6,22),s(22,22
+     &),c(22,22),m(22,22),p(22),ht(0),hp(0),gp(4,9)
       v(1366)=d(1)+(4d0/3d0)*d(2)
       DO i1=1,ngpo
        v(290)=gp(1,i1)
