@@ -1,4 +1,4 @@
-      subroutine elmt11 (d,ul,xl,ix,tl,s,p,ndf,ndm,nst,isw)
+      subroutine ""<*SMSSessionName*>"" (d,ul,xl,ix,tl,s,p,ndf,ndm,nst,isw)
 
 !      * * F E A P * * A Finite Element Analysis Program
 
@@ -91,7 +91,7 @@
         nelu(:)   = 0
         du(:)     = 0
         dofu(:,:) = 0
-        call ISW01(v,npde,du,nelu,hist1,hist3)
+        call ""<*SMSSessionName*>""_ISW01(v,npde,du,nelu,hist1,hist3)
 
 !       Build 'dofu'
         kk = 0
@@ -155,7 +155,7 @@
           r(:)   = 0.0d0
 
 !         Call the routine for ISW=3
-          call ISW03(v,d,xl,ua,k,c,m,r,hr(nh1),hr(nh2),gp,ngpo)
+          call ""<*SMSSessionName*>""_ISW03(v,d,xl,ua,k,c,m,r,hr(nh1),hr(nh2),gp,ngpo)
 
 !         Print values for debug mode
           if(debug) then
@@ -186,7 +186,7 @@
           r(:)   = 0.0d0
 
 !         Call the routine for ISW=6
-          call ISW06(v,d,xl,ua,r,hr(nh1),hr(nh2),gp,ngpo)
+          call ""<*SMSSessionName*>""_ISW06(v,d,xl,ua,r,hr(nh1),hr(nh2),gp,ngpo)
 
 !         Map to FEAP storage
           call SB_ace2nst(k,r,dofacegen,s,p,nst,du,dofu,nelu,npde,isw)
@@ -205,7 +205,7 @@
         r(:)   = 0.0d0
 
 !       Call the routine for ISW=5
-        call ISW05(v,d,xl,ua,m,r,hr(nh1),hr(nh2),gp,ngpo)
+        call ""<*SMSSessionName*>""_ISW05(v,d,xl,ua,m,r,hr(nh1),hr(nh2),gp,ngpo)
 
       elseif(isw.eq.9) then                ! Compute mass matrix
 
@@ -217,8 +217,8 @@
         r(:)   = 0.0d0
 
 !       Call the routine for ISW=9
-        call ISW09(v,d,xl,ua,c,r,hr(nh1),hr(nh2),gp,ngpo)
+        call ""<*SMSSessionName*>""_ISW09(v,d,xl,ua,c,r,hr(nh1),hr(nh2),gp,ngpo)
 
       endif
 
-      end subroutine elmt11
+      end subroutine ""<*SMSSessionName*>""
