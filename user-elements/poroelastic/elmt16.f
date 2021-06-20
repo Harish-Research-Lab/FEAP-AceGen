@@ -1,10 +1,10 @@
 !**************************************************************
 !* AceGen    7.205 MacOSX (15 Jan 21)                         *
-!*           Co. J. Korelc  2020           20 Jun 21 01:01:52 *
+!*           Co. J. Korelc  2020           20 Jun 21 01:24:36 *
 !**************************************************************
 ! User     : Full professional version
 ! Notebook : Poroelastic
-! Evaluation time                 : 59 s    Mode  : Optimal
+! Evaluation time                 : 67 s    Mode  : Optimal
 ! Number of formulae              : 985     Method: Automatic
 ! Subroutine                      : elmt16_ISW01 size: 77
 ! Subroutine                      : elmt16_ISW03 size: 19860
