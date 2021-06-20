@@ -16,8 +16,9 @@ EDISpl
     1 0 1
 
 MATErial 1
-    user 13 !q9q4_th
-        0.1 10 1
+    THERmal
+    FOURIER ISOTROPIC 10.0 1.0
+    DENSITY MASS 0.10
 
 END
 

@@ -6,7 +6,7 @@ Harish, A. B. and Taylor, R. L. and Govindjee, S., "Automated Generation of User
 
 ## Folder information
 
-This element in this folder is based on small-strain poroelastic formulation. This element was developed as a part of the work presented in the Festschrift on the occasion of the 70th birthday of <a href="https://www.ikm.uni-hannover.de/de/wriggers/" target="_blank">Prof. Peter Wriggers</a>. The element has a Q9/Q4 topology as shown below and utilizes a Taylor-Hood type interpolation for the u/p dependent variables, respectively. More detailed information about the formulation is available in Harish et. al. (2020,2021) [1,2]
+This element in this folder is based on small-strain poroelastic formulation. This element was developed as a part of the work presented in the Festschrift on the occasion of the 70th birthday of <a href="https://www.ikm.uni-hannover.de/de/wriggers/" target="_blank">Prof. Peter Wriggers</a>. The element has a Q9/Q4 topology as shown below and utilizes a Taylor-Hood type interpolation for the u/p dependent variables, respectively. More detailed information about the formulation is available in Harish et. al. (2020,2021) [1,2]. Detailed discussion on the validation of the element is available in Harish et. al. (2020) [1]
 
 ![Q9/Q4 Taylor-Hood element topology](./../../common/images/Q9Q4-TH_small.png "Q9/Q4 Taylor-Hood element")
 

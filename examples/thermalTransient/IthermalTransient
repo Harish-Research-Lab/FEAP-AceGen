@@ -1,0 +1,42 @@
+FEAP
+    0 0 0 2 1 4
+
+BLOCK
+    CARTESIAN 10 10 0 0 1 0 0
+    1 0.0 0.0
+    2 5.0 0.0
+    3 5.0 5.0
+    4 0.0 5.0
+
+EBOUnd
+    1 0 1
+    1 5 1 ! Use for steady state problem only
+
+EDISpl
+    1 0 1
+
+MATErial 1
+    user 14
+        0.1 10 1
+
+END
+
+ORDER
+  1
+
+BATCH
+    PARAmeter dt=0.001
+    DT,,dt ! Sets to parameter value
+    TRANs,BACK
+    LOOP,,20
+        TIME
+        TANG,,1
+        PLOT,RANG,0.4,0.9
+        PLOT,WIPE
+        PLOT,CONT,3 ! Temperature contours
+    NEXT
+END
+
+INTEractive
+
+STOP
