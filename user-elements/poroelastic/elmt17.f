@@ -1,20 +1,20 @@
 !**************************************************************
 !* AceGen    7.205 MacOSX (15 Jan 21)                         *
-!*           Co. J. Korelc  2020           20 Jun 21 01:24:36 *
+!*           Co. J. Korelc  2020           21 Jun 21 00:27:01 *
 !**************************************************************
 ! User     : Full professional version
-! Notebook : Poroelastic
-! Evaluation time                 : 67 s    Mode  : Optimal
+! Notebook : poroelastic
+! Evaluation time                 : 63 s    Mode  : Optimal
 ! Number of formulae              : 985     Method: Automatic
-! Subroutine                      : elmt16_ISW01 size: 77
-! Subroutine                      : elmt16_ISW03 size: 19860
-! Subroutine                      : elmt16_ISW05 size: 4770
-! Subroutine                      : elmt16_ISW06 size: 3138
-! Subroutine                      : elmt16_ISW09 size: 5217
+! Subroutine                      : elmt17_ISW01 size: 77
+! Subroutine                      : elmt17_ISW03 size: 19860
+! Subroutine                      : elmt17_ISW05 size: 4770
+! Subroutine                      : elmt17_ISW06 size: 3138
+! Subroutine                      : elmt17_ISW09 size: 5217
 ! Total size of Mathematica  code : 33062 subexpressions
 ! Total size of Fortran code      : 115116 bytes
 
-      subroutine elmt16 (d,ul,xl,ix,tl,s,p,ndf,ndm,nst,isw)
+      subroutine elmt17 (d,ul,xl,ix,tl,s,p,ndf,ndm,nst,isw)
 
 !      * * F E A P * * A Finite Element Analysis Program
 
@@ -98,7 +98,7 @@
       endif
  
       if(isw.lt.0) then
-        utx(1) = "elmt16"
+        utx(1) = "elmt17"
 
       elseif(isw.eq.1) then                ! Input material set data
         pstyp = ndm                        ! Sets plot dimension (1,2,3)
@@ -107,7 +107,7 @@
         nelu(:)   = 0
         du(:)     = 0
         dofu(:,:) = 0
-        call elmt16_ISW01(v,npde,du,nelu,hist1,hist3)
+        call elmt17_ISW01(v,npde,du,nelu,hist1,hist3)
 
 !       Build 'dofu'
         kk = 0
@@ -182,7 +182,7 @@
           r(:)   = 0.0d0
 
 !         Call the routine for ISW=3
-          call elmt16_ISW03(v,d,xl,ua,k,c,m,r,hr(nh1),hr(nh2),gp,ngpo)
+          call elmt17_ISW03(v,d,xl,ua,k,c,m,r,hr(nh1),hr(nh2),gp,ngpo)
 
 !         Print values for debug mode
           if(debug) then
@@ -213,7 +213,7 @@
           r(:)   = 0.0d0
 
 !         Call the routine for ISW=6
-          call elmt16_ISW06(v,d,xl,ua,r,hr(nh1),hr(nh2),gp,ngpo)
+          call elmt17_ISW06(v,d,xl,ua,r,hr(nh1),hr(nh2),gp,ngpo)
 
 !         Map to FEAP storage
           call SB_ace2nst(k,r,dofacegen,s,p,nst,du,dofu,nelu,npde,isw)
@@ -232,7 +232,7 @@
         r(:)   = 0.0d0
 
 !       Call the routine for ISW=5
-        call elmt16_ISW05(v,d,xl,ua,m,r,hr(nh1),hr(nh2),gp,ngpo)
+        call elmt17_ISW05(v,d,xl,ua,m,r,hr(nh1),hr(nh2),gp,ngpo)
 
       elseif(isw.eq.9) then                ! Compute mass matrix
 
@@ -244,15 +244,15 @@
         r(:)   = 0.0d0
 
 !       Call the routine for ISW=9
-        call elmt16_ISW09(v,d,xl,ua,c,r,hr(nh1),hr(nh2),gp,ngpo)
+        call elmt17_ISW09(v,d,xl,ua,c,r,hr(nh1),hr(nh2),gp,ngpo)
 
       endif
 
-      end subroutine elmt16
+      end subroutine elmt17
 
 
 !******************* S U B R O U T I N E **********************
-      SUBROUTINE elmt16_ISW01(v,npde,du,nelu,hist1,hist3)
+      SUBROUTINE elmt17_ISW01(v,npde,du,nelu,hist1,hist3)
       IMPLICIT NONE
       include 'sms.h'
       INTEGER npde,du(10),nelu(10),hist1,hist3
@@ -267,7 +267,7 @@
       END
 
 !******************* S U B R O U T I N E **********************
-      SUBROUTINE elmt16_ISW03(v,d,xl,ul,s,c,m,p,ht,hp,gp,ngpo)
+      SUBROUTINE elmt17_ISW03(v,d,xl,ul,s,c,m,p,ht,hp,gp,ngpo)
       IMPLICIT NONE
       include 'sms.h'
       INTEGER ngpo,i6
@@ -2352,7 +2352,7 @@
       END
 
 !******************* S U B R O U T I N E **********************
-      SUBROUTINE elmt16_ISW05(v,d,xl,ul,m,p,ht,hp,gp,ngpo)
+      SUBROUTINE elmt17_ISW05(v,d,xl,ul,m,p,ht,hp,gp,ngpo)
       IMPLICIT NONE
       include 'sms.h'
       INTEGER ngpo,i1258
@@ -2970,7 +2970,7 @@
       END
 
 !******************* S U B R O U T I N E **********************
-      SUBROUTINE elmt16_ISW06(v,d,xl,ul,p,ht,hp,gp,ngpo)
+      SUBROUTINE elmt17_ISW06(v,d,xl,ul,p,ht,hp,gp,ngpo)
       IMPLICIT NONE
       include 'sms.h'
       INTEGER ngpo,i1831
@@ -3234,7 +3234,7 @@
       END
 
 !******************* S U B R O U T I N E **********************
-      SUBROUTINE elmt16_ISW09(v,d,xl,ul,c,p,ht,hp,gp,ngpo)
+      SUBROUTINE elmt17_ISW09(v,d,xl,ul,c,p,ht,hp,gp,ngpo)
       IMPLICIT NONE
       include 'sms.h'
       INTEGER ngpo,i2332

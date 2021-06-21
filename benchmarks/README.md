@@ -8,7 +8,7 @@ Harish, A. B. and Taylor, R. L. and Govindjee, S., "Automated Generation of User
 
 This folder contains the benchmark problems for each of the elements available in this repository and the files include:
 
-1. **IthermalSteadyFeap**: Input file for the steady-state thermal problem as provide by the FEAP example manual [2]. The file uses standard FEAP element [3]
+1. **IthermalSteadyFeap**: Input file for the steady-state thermal problem as provide by the FEAP example manual [2]. The file uses standard FEAP element [3].
 
 2. **IthermalTransientFeap**: Input file for the transient thermal problem as provide by the FEAP example manual [2]. The file uses standard FEAP element [3].
 
