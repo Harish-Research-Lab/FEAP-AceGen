@@ -42,8 +42,8 @@ EBOUn
 
 CSURf
     line
-    1 h h 450.
-    2 0 h 450.
+    1 h 0 4500.
+    2 h h 4500.
 
 MATErial 1
     SOLId
@@ -59,7 +59,7 @@ BATCh
     DT,,0.1
 END
     2 5
-    0 0 1 10 2 0 3 -1 4 0
+    0 0 1 1
 
 BATCh
     LOOP,,10
