@@ -1,0 +1,47 @@
+
+  --------------------------------- START OF FEAP LOG ----------------------------------
+
+  INPUT FILE NAME: IlinElastTrFeap                                                                                                                 
+
+  MESH INPUT RECORDS
+  ------------------
+     PARAmeters                     
+     SNODes                         
+     SIDE                           
+     BLENd                          
+     BLENd                          
+     EBOUn                          
+     CSURf                          
+     MATErial        1              
+     END                            
+
+  --------------------------------- END OF MESH INPUTS ---------------------------------
+
+  CONVERGENCE LABELS
+  ----------------
+    UN = Unconverged
+    LI = Linear Problem: No Test
+    ER = Energy & Residual Converged
+    EN = Energy Converged
+    RN = Residual Converged
+    ET = Energy Converged to Zero Tolerance
+    RT = Residual Converged to Tolerance
+
+  SOLUTION SUMMARY
+  ----------------
+    Load  Total     Solution      Time     Residual Norm        Energy Norm     CPU Time Cn
+    Step Tang+Form      Time      Incr.  Initial     Final   Initial     Final (Seconds)
+  -----------------------------------------------------------------------------------------
+       1    1   0  1.000E-01  1.00E-01  1.14E+03  1.14E+03  1.26E+02                0.04 UN
+       2    1   0  2.000E-01  1.00E-01  1.53E+03  1.53E+03  3.05E+02                0.06 UN
+       3    1   0  3.000E-01  1.00E-01  1.88E+03  1.88E+03  5.19E+02                0.08 UN
+       4    1   0  4.000E-01  1.00E-01  2.20E+03  2.20E+03  7.65E+02                0.10 UN
+       5    1   0  5.000E-01  1.00E-01  2.52E+03  2.52E+03  1.04E+03                0.11 UN
+       6    1   0  6.000E-01  1.00E-01  2.83E+03  2.83E+03  1.34E+03                0.13 UN
+       7    1   0  7.000E-01  1.00E-01  3.12E+03  3.12E+03  1.66E+03                0.15 UN
+       8    1   0  8.000E-01  1.00E-01  3.41E+03  3.41E+03  2.01E+03                0.17 UN
+       9    1   0  9.000E-01  1.00E-01  3.69E+03  3.69E+03  2.38E+03                0.18 UN
+      10    1   0  1.000E+00  1.00E-01  3.97E+03            2.77E+03                0.19 UN
+
+  Sum      10   0
+  ---------------------------------- END OF FEAP LOG --------------------------------------
