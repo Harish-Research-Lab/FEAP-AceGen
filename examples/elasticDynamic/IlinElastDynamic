@@ -42,8 +42,8 @@ EBOUn
 
 CSURf
     line
-    1 h h 450.
-    2 0 h 450.
+    1 h 0 450.
+    2 h h 450.
 
 MATErial 1
     user 16
@@ -58,7 +58,7 @@ BATCh
     DT,,0.1
 END
     2 5
-    0 0 1 1 2 0 3 -1 4 0
+    0 0 1 1 10 1
 
 ORDER
     1
@@ -68,7 +68,7 @@ BATCh
     PARAMETER dt=0.1
     DT,,dt
     TRANs,BACK
-    LOOP,,10
+    LOOP,,30
         TIME
         TANG,,1
         PLOT,WIPE
