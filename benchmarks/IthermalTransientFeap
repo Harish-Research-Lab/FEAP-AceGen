@@ -29,7 +29,7 @@ BATCH
     PARAmeter dt=0.001
     DT,,dt ! Sets to parameter value
     TRANs,BACK
-    LOOP,,200
+    LOOP,,10
         TIME
         TANG,,1
         PLOT,RANG,0.4,0.9
