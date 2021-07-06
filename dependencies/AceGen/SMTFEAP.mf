@@ -207,7 +207,7 @@
 !       Call the routine for ISW=5
         call ""<*SMSSessionName*>""_ISW05(v,d,xl,ua,m,r,hr(nh1),hr(nh2),gp,ngpo)
 
-      elseif(isw.eq.9) then                ! Compute mass matrix
+      elseif(isw.eq.9) then                ! Compute damping matrix
 
 !       Map dofs
         call SB_ua_set(ul,ndf,nen,ua,du,dofu,nelu,npde)
