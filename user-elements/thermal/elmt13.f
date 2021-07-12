@@ -1,9 +1,9 @@
 !**************************************************************
 !* AceGen    7.205 MacOSX (15 Jan 21)                         *
-!*           Co. J. Korelc  2020           20 Jun 21 08:31:39 *
+!*           Co. J. Korelc  2020           12 Jul 21 01:32:25 *
 !**************************************************************
 ! User     : Full professional version
-! Notebook : ThermalStatic
+! Notebook : thermalSteady
 ! Evaluation time                 : 4 s     Mode  : Optimal
 ! Number of formulae              : 126     Method: Automatic
 ! Subroutine                      : elmt13_ISW01 size: 57
@@ -228,7 +228,7 @@
 !       Call the routine for ISW=5
         call elmt13_ISW05(v,d,xl,ua,m,r,hr(nh1),hr(nh2),gp,ngpo)
 
-      elseif(isw.eq.9) then                ! Compute mass matrix
+      elseif(isw.eq.9) then                ! Compute damping matrix
 
 !       Map dofs
         call SB_ua_set(ul,ndf,nen,ua,du,dofu,nelu,npde)

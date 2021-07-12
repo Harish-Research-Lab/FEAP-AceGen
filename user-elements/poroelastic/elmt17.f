@@ -1,10 +1,10 @@
 !**************************************************************
 !* AceGen    7.205 MacOSX (15 Jan 21)                         *
-!*           Co. J. Korelc  2020           21 Jun 21 00:27:01 *
+!*           Co. J. Korelc  2020           12 Jul 21 01:27:29 *
 !**************************************************************
 ! User     : Full professional version
-! Notebook : poroelastic
-! Evaluation time                 : 63 s    Mode  : Optimal
+! Notebook : Poroelastic
+! Evaluation time                 : 62 s    Mode  : Optimal
 ! Number of formulae              : 985     Method: Automatic
 ! Subroutine                      : elmt17_ISW01 size: 77
 ! Subroutine                      : elmt17_ISW03 size: 19860
@@ -234,7 +234,7 @@
 !       Call the routine for ISW=5
         call elmt17_ISW05(v,d,xl,ua,m,r,hr(nh1),hr(nh2),gp,ngpo)
 
-      elseif(isw.eq.9) then                ! Compute mass matrix
+      elseif(isw.eq.9) then                ! Compute damping matrix
 
 !       Map dofs
         call SB_ua_set(ul,ndf,nen,ua,du,dofu,nelu,npde)

@@ -1,6 +1,6 @@
 !**************************************************************
 !* AceGen    7.205 MacOSX (15 Jan 21)                         *
-!*           Co. J. Korelc  2020           20 Jun 21 08:53:40 *
+!*           Co. J. Korelc  2020           12 Jul 21 01:33:49 *
 !**************************************************************
 ! User     : Full professional version
 ! Notebook : thermalTransient
@@ -228,7 +228,7 @@
 !       Call the routine for ISW=5
         call elmt14_ISW05(v,d,xl,ua,m,r,hr(nh1),hr(nh2),gp,ngpo)
 
-      elseif(isw.eq.9) then                ! Compute mass matrix
+      elseif(isw.eq.9) then                ! Compute damping matrix
 
 !       Map dofs
         call SB_ua_set(ul,ndf,nen,ua,du,dofu,nelu,npde)

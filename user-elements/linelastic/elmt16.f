@@ -1,9 +1,9 @@
 !**************************************************************
 !* AceGen    7.205 MacOSX (15 Jan 21)                         *
-!*           Co. J. Korelc  2020           21 Jun 21 00:04:09 *
+!*           Co. J. Korelc  2020           11 Jul 21 20:29:04 *
 !**************************************************************
 ! User     : Full professional version
-! Notebook : linelasticTransient
+! Notebook : linelasticDynamic
 ! Evaluation time                 : 9 s     Mode  : Optimal
 ! Number of formulae              : 265     Method: Automatic
 ! Subroutine                      : elmt16_ISW01 size: 57
@@ -228,7 +228,7 @@
 !       Call the routine for ISW=5
         call elmt16_ISW05(v,d,xl,ua,m,r,hr(nh1),hr(nh2),gp,ngpo)
 
-      elseif(isw.eq.9) then                ! Compute mass matrix
+      elseif(isw.eq.9) then                ! Compute damping matrix
 
 !       Map dofs
         call SB_ua_set(ul,ndf,nen,ua,du,dofu,nelu,npde)
