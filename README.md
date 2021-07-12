@@ -1,4 +1,4 @@
-# Linear elastic (Small strain)
+# Automated generation of user elements
 
 ## How to cite
 
