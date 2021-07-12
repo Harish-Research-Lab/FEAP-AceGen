@@ -12,9 +12,28 @@ Any questions related to the repository can be raised on the [FEAP user forum](h
 
 This repository has the files related to the AceGen template that has been developed to automatically generate user elements for [FEAP](http://projects.ce.berkeley.edu/feap/). The folders available in this repository are as below:
 
-- *user-elements*: This folder contains the Mathematica notebooks and the generated FEAP user elements (*elmtXX.f*)
+- **user-elements**: This folder contains the Mathematica notebooks and the generated FEAP user elements (*elmtXX.f*)
 
-- *dependencies*: This contains the dependencies for using the Mathematica notebooks and the generated FEAP user elements. 
+    - *user-elements/thermal*: Steady-state and transient thermal elements.
+
+    - *user-elements/linelastic*: Quasi-static and dynamic small-strain linear elastic material models.
+
+    - *user-elements/poroelastic*: Dynamic small-strain poroelastic material models.
+
+    - *user-elements/hyperelastic*: Large-strain quasi-static hyperelastic material models.
+
+- **dependencies**: This contains the dependencies for using the Mathematica notebooks and the generated FEAP user elements. 
+
+    - *dependencies/AceGen*: The files in this folder need to be copied to the same folder as the Mathematica notebook to generate the user element. More information can be found in the section [How to generate user elements](#how-to-generate-user-elements) 
+    
+    - *dependencies/FEAP*: The files in this folder need to be copied into the FEAP folder and compiled prior to usage. More information can be found in the section [How to use the generated elements](#how-to-use-the-generated-elements)
+
+- **benchmarks**:
+
+- **examples**:
+
+- **common**:
+
 
 ## How to generate user elements
 
