@@ -1,5 +1,13 @@
 # Automated generation of user elements for FEAP
 
+1. [How to cite](#how-to-cite)
+2. [Questions and user requests](#questions-and-user-requests)
+3. [Folder information](#folder-information)
+4. [Requirements](#requirements)
+5. [How to generate user elements](#how-to-generate-user-elements)
+6. [How to use the generated elements](#how-to-use-the-generated-elements)
+7. [References](#references)
+
 ## How to cite
 
 Harish, A. B. and Taylor, R. L. and Govindjee, S., "Automated Generation of User Elements (UEL) for FEAP," SEMM Report UCB/SEMM-21/01 (2021)
@@ -10,7 +18,7 @@ If you have any questions related to the repository or would like help to explor
 
 ## Folder information
 
-This repository has the files related to the AceGen template that has been developed to automatically generate user elements for [FEAP](http://projects.ce.berkeley.edu/feap/). The folders available in this repository are as below:
+This repository has the files related to the AceGen template that has been developed to automatically generate user elements for [FEAP](http://projects.ce.berkeley.edu/feap/). More information about AceGen is available in Korelc and Wriggers [6]. The folders available in this repository are as below:
 
 - **user-elements**: This folder contains the Mathematica notebooks and the generated FEAP user elements (*elmtXX.f*)
 
@@ -28,7 +36,7 @@ This repository has the files related to the AceGen template that has been devel
     
     - *dependencies/FEAP*: The files in this folder need to be copied into the FEAP folder and compiled prior to usage. More information can be found in the section [How to use the generated elements](#how-to-use-the-generated-elements)
 
-- **benchmarks**: This contains the FEAP input files used in the validation examples. These input files use the standard FEAP elements. These examples are used to compare with the results obtained from AceGen-generated FEAP user elements.
+- **benchmarks**: This contains the FEAP input files used in the validation examples. These input files use the standard FEAP elements. These examples are used to compare with the results obtained from AceGen-generated FEAP user elements. The formulation and other information can be found in [2,3] and FEAP user [4] and example [5] manual.
 
 - **examples**: This folder has the FEAP input files that use the AceGen-generated elements. The input files are the same problems as in the *benchmarks* folder.
 
@@ -45,6 +53,16 @@ This repository has the files related to the AceGen template that has been devel
     - *neoHookean*: 2-D quasi-static uniaxial tensile test, in large deformation range, on a neo-Hookean material. The comparison of numerical results with the benchmark problem is described in Sec 5.4.3 and particularly in Fig. 5.32 of Harish et. al. [1].
 
 - **common**: This folder contains images used in the README files related to this repository.
+
+## Requirements
+
+The following softwares are required to generate and user the user elements.
+
+- [FEAP](http://projects.ce.berkeley.edu/feap) v8.1 or later. A free version is also available for download as [Feappv](http://projects.ce.berkeley.edu/feap/feappv).
+
+- [Mathematica](https://www.wolfram.com/mathematica) v11.0 or later. A 15-day trial is available for download through the [Mathematica](https://www.wolfram.com/mathematica/trial) website
+
+- [AceGen](http://symech.fgg.uni-lj.si) v.7.0 or later. An evaluation versionof AceGen is available for students and educators through the [AceGen](http://symech.fgg.uni-lj.si/Download.htm) website.
 
 ## How to generate user elements
 
@@ -74,8 +92,36 @@ This repository has the files related to the AceGen template that has been devel
 
 ## How to use the generated elements
 
-- 
+- Detailed instructions on compiling FEAP on [Windows](https://www.youtube.com/watch?v=7QAh6QvOT6s) and [Linux/Mac](https://www.youtube.com/watch?v=_ohQ__rqq3Y) can be found in the tutorials.
+
+- Copy a new folder in the FEAP folder. Here, we have created a folder with the name *acegen* as shown below
+
+![Copy a new folder](common/images/00_CreateFolder.png "Copy a new folder")
+
+- Edit the *makefile*, as shown below, to add the name of the new folder (here *acegen*) into the makefile.
+
+![Edit makefile](common/images/01_EditMake.png "Edit makefile")
+
+- Copy all the dependency files from the *dependencies/FEAP* into the newly created folder as shown below.
+
+![Copy dependencies](common/images/02_CopyFEAPDep.png "Copy dependencies")
+
+- Finally copy the *makefile* into the new folder. Here, we have copied the *makefile* from the *FEAP86/modules* to the *acegen* folder as shown belo.
+
+![Copy makefile into the new folder](common/images/03_CopyMake.png "Copy makefile into the new folder")
+
+- Compile the FEAP and use the new element generated from AceGen. Check the FEAP input files in the examples folder to learn more about calling the generated elements.
 
 ## References
 
-1. Harish, A. B. and Taylor, R. L. and Govindjee, S., "Automated Generation of User Elements (UEL) for FEAP," SEMM Report UCB/SEMM-21/01 (2021)
+1. Harish, A. B. and Taylor, R. L. and Govindjee, S., "Automated Generation of User Elements (UEL) for FEAP," SEMM Report UCB/SEMM-21/01 (2021).
+
+2. Zienkiewicz, O., Taylor, R., and Zhu, J., The Finite Element Method: Its Basis and Fundamentals, 7th Edition, Elsevier,Oxford, 2013.
+
+3. Zienkiewicz, O., Taylor, R., and Fox, D., The Finite Element Method for Solid and Structural Mechanics, 7th Edition,Elsevier, Oxford, 2013.
+
+4. Taylor, R., and Govindjee, S., FEAP - A Finite Element Analysis Program, User Manual, University of California,Berkeley.,http://projects.ce.berkeley.edu/feap.
+
+5. Taylor, R., and Govindjee, S., FEAP - A Finite Element Analysis Program, Example Manual, University of California,Berkeley.,http://projects.ce.berkeley.edu/feap.
+
+6. Korelc, J. and Wriggers, P., Automation of Finite Element Methods, Springer International Publishing, Switzerland, 2016
