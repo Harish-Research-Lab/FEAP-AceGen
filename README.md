@@ -12,9 +12,13 @@
 
 Harish, A. B. and Taylor, R. L. and Govindjee, S., "Automated Generation of User Elements (UEL) for FEAP," SEMM Report UCB/SEMM-21/01 (2021)
 
+[Top](#Automated-generation-of-user-elements-for-FEAP)
+
 ## Questions and user requests
 
 If you have any questions related to the repository or would like help to explore new elements and contribute to the repository, this can be raised on the [FEAP user forum](http://feap.berkeley.edu/forum/index.php).
+
+[Top](#Automated-generation-of-user-elements-for-FEAP)
 
 ## Folder information
 
@@ -54,6 +58,8 @@ This repository has the files related to the AceGen template that has been devel
 
 - **common**: This folder contains images used in the README files related to this repository.
 
+[Top](#Automated-generation-of-user-elements-for-FEAP)
+
 ## Requirements
 
 The following softwares are required to generate and user the user elements.
@@ -63,6 +69,8 @@ The following softwares are required to generate and user the user elements.
 - [Mathematica](https://www.wolfram.com/mathematica) v11.0 or later. A 15-day trial is available for download through the [Mathematica](https://www.wolfram.com/mathematica/trial) website
 
 - [AceGen](http://symech.fgg.uni-lj.si) v.7.0 or later. An evaluation versionof AceGen is available for students and educators through the [AceGen](http://symech.fgg.uni-lj.si/Download.htm) website.
+
+[Top](#Automated-generation-of-user-elements-for-FEAP)
 
 ## How to generate user elements
 
@@ -90,9 +98,15 @@ The following softwares are required to generate and user the user elements.
 
 ![Compilation fail](common/images/04_CompileFail.png "Compilation fail")
 
+[Top](#Automated-generation-of-user-elements-for-FEAP)
+
 ## How to use the generated elements
 
-- Detailed instructions on compiling FEAP on [Windows](https://www.youtube.com/watch?v=7QAh6QvOT6s) and [Linux/Mac](https://www.youtube.com/watch?v=_ohQ__rqq3Y) can be found in the tutorials.
+- Detailed instructions on compiling FEAP
+
+    - On [Windows](https://www.youtube.com/watch?v=7QAh6QvOT6s)
+
+    - On [Linux/Mac](https://www.youtube.com/watch?v=_ohQ__rqq3Y)
 
 - Copy a new folder in the FEAP folder. Here, we have created a folder with the name *acegen* as shown below
 
@@ -106,11 +120,13 @@ The following softwares are required to generate and user the user elements.
 
 ![Copy dependencies](common/images/02_CopyFEAPDep.png "Copy dependencies")
 
-- Finally copy the *makefile* into the new folder. Here, we have copied the *makefile* from the *FEAP86/modules* to the *acegen* folder as shown belo.
+- Finally copy the *makefile* into the new folder. Here, we have copied the *makefile* from the *FEAP86/modules* to the *acegen* folder as shown below .
 
 ![Copy makefile into the new folder](common/images/03_CopyMake.png "Copy makefile into the new folder")
 
 - Compile the FEAP and use the new element generated from AceGen. Check the FEAP input files in the examples folder to learn more about calling the generated elements.
+
+[Top](#Automated-generation-of-user-elements-for-FEAP)
 
 ## References
 
@@ -125,3 +141,5 @@ The following softwares are required to generate and user the user elements.
 5. Taylor, R., and Govindjee, S., FEAP - A Finite Element Analysis Program, Example Manual, University of California,Berkeley.,http://projects.ce.berkeley.edu/feap.
 
 6. Korelc, J. and Wriggers, P., Automation of Finite Element Methods, Springer International Publishing, Switzerland, 2016
+
+[Top](#Automated-generation-of-user-elements-for-FEAP)
