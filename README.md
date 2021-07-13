@@ -62,7 +62,7 @@ This repository has the files related to the AceGen template that has been devel
 
 ## Requirements
 
-The following softwares are required to generate and user the user elements.
+The following softwares are required to generate and use the user elements.
 
 - [FEAP](http://projects.ce.berkeley.edu/feap) v8.1 or later. A free version is also available for download as [Feappv](http://projects.ce.berkeley.edu/feap/feappv).
 
@@ -108,7 +108,7 @@ The following softwares are required to generate and user the user elements.
 
     - On [Linux/Mac](https://www.youtube.com/watch?v=_ohQ__rqq3Y)
 
-- Copy a new folder in the FEAP folder. Here, we have created a folder with the name *acegen* as shown below
+- Create a new folder in the FEAP folder. Here, we have created a folder with the name *acegen* as shown below
 
 ![Copy a new folder](common/images/00_CreateFolder.png "Copy a new folder")
 
