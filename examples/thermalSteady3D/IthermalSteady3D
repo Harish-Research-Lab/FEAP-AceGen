@@ -1,0 +1,36 @@
+FEAP
+    0 0 0 3 1 8
+
+BLOCK
+    CARTESIAN 10 10 10 1 1 1 10
+    1 0.0 0.0 0.0
+    2 5.0 0.0 0.0
+    3 5.0 5.0 0.0
+    4 0.0 5.0 0.0
+    5 0.0 0.0 5.0
+    6 5.0 0.0 5.0
+    7 5.0 5.0 5.0
+    8 0.0 5.0 5.0
+
+EBOUnd
+    1 0 1
+    1 5 1 ! Use for steady state problem only
+
+EDISpl
+    1 0 1
+
+MATErial 1
+    user 23 
+        0.1 10 1
+
+END
+
+BATCh
+    TANG,,1 ! Solve problem
+    PLOT,CONT,1 ! Contour solution
+    DISP,ALL
+END
+
+INTEractive
+
+STOP

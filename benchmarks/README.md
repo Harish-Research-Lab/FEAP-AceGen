@@ -4,13 +4,15 @@ This folder contains the benchmark problems for each of the elements available i
 
 1. **IthermalSteadyFeap**: Input file for the steady-state thermal problem. More details about the problem is provided in chapter 6 of the FEAP example manual [2] and in Sec. 5.1.3 of Harish et. al. [1]. This problem also has an analytical solution, as provided in Toptan et. al. [5].
 
-2. **IthermalTransientFeap**: Input file for the transient thermal problem. More details about the problem is provided in in chapter 6 of the FEAP example manual [2] and in Sec. 5.1.3 of Harish et. al. [1].
+2. **IthermalSteadyFeap3D**: Input file for the 3D steady-state thermal problem. More details about the problem is provided in chapter 6 of the FEAP example manual [2] and in Sec. 5.1.4 of Harish et. al. [1]. This problem also has an analytical solution, as provided in Toptan et. al. [5].
 
-3. **IlinElastStaticFeap**: Input file for the quasi-static uniaxial test. The material model considered is linear elastic in the small deformation range. The problem description can be found in Sec 5.2.3 of Harish et. al. [1].
+3. **IthermalTransientFeap**: Input file for the transient thermal problem. More details about the problem is provided in in chapter 6 of the FEAP example manual [2] and in Sec. 5.1.3 of Harish et. al. [1].
 
-4. **IlinElastDynFeap**: Input file for the dynamic uniaxial test. The material model considered is linear elastic in the small deformation range. The problem description can be found in Sec 5.2.3 of Harish et. al. [1].
+4. **IlinElastStaticFeap**: Input file for the quasi-static uniaxial test. The material model considered is linear elastic in the small deformation range. The problem description can be found in Sec 5.2.3 of Harish et. al. [1].
 
-5. **IneoHookeFeap**: Input file for the dynamic uniaxial test. The material model considered is neo-Hookean in the large deformation range. The problem description can be found in Sec 5.4.3 of Harish et. al. [1].
+5. **IlinElastDynFeap**: Input file for the dynamic uniaxial test. The material model considered is linear elastic in the small deformation range. The problem description can be found in Sec 5.2.3 of Harish et. al. [1].
+
+6. **IneoHookeFeap**: Input file for the dynamic uniaxial test. The material model considered is neo-Hookean in the large deformation range. The problem description can be found in Sec 5.4.3 of Harish et. al. [1].
 
 ## References
 
