@@ -10,7 +10,7 @@
 
 ## How to cite
 
-Harish, A. B. and Taylor, R. L. and Govindjee, S., "Automated Generation of User Elements (UEL) for FEAP," SEMM Report UCB/SEMM-21/01 (2021)
+Harish, A. B. and Taylor, R. L. and Govindjee, S., "Automated Generation of User Elements (UEL) for FEAP," SEMM Report UCB/SEMM-2021/01 (2021)
 
 [Top](#Automated-generation-of-user-elements-for-FEAP)
 
