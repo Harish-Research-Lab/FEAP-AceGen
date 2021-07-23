@@ -130,7 +130,7 @@ The following softwares are required to generate and use the user elements.
 
 ## References
 
-1. Harish, A. B. and Taylor, R. L. and Govindjee, S., "Automated Generation of User Elements (UEL) for FEAP," SEMM Report UCB/SEMM-21/01 (2021).
+1. Harish, A. B. and Taylor, R. L. and Govindjee, S., "Automated Generation of User Elements (UEL) for FEAP," SEMM Report UCB/SEMM-2021/01 (2021).
 
 2. Zienkiewicz, O., Taylor, R., and Zhu, J., The Finite Element Method: Its Basis and Fundamentals, 7th Edition, Elsevier,Oxford, 2013.
 
