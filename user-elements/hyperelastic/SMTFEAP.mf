@@ -1,0 +1,224 @@
+      subroutine ""<*SMSSessionName*>"" (d,ul,xl,ix,tl,s,p,ndf,ndm,nst,isw)
+
+!      * * F E A P * * A Finite Element Analysis Program
+
+!....  Copyright (c) 1984-2021: Regents of the University of California
+!                               All rights reserved
+
+!-----[--.----+----.----+----.-----------------------------------------]
+!     Modification log                                Date (dd/mm/year)
+!-----[--.----+----.----+----.-----------------------------------------]
+!     Purpose:
+
+!     Inputs:
+!       d(*)          - Material set parameters
+!       ul(ndf,nen,*) - Solution parameters
+!       xl(ndm,nen)   - Element nodal coordinates
+!       ix(nen1)      - Element global node numbers
+!       tl(nen)       - Element vector (e.g., nodal temperatures)
+!       ndf           - Maximum no dof's/node
+!       ndm           - Mesh spatial dimension
+!       nst           - Element matrix/vector dimension
+!       isw           - Switch parameter (set by input commands)
+
+!     Outputs:
+!       s(nst,nst,2)  - Element matrix (stiffness, mass, etc.)
+!       p(nst,2)      - Element vector (residual, lump mass, etc.)
+!-----[--.----+----.----+----.-----------------------------------------]
+
+      implicit none
+
+      include 'debugs.h'
+      include 'bdata.h'
+      include 'cdata.h'
+      include 'eldata.h'
+      include 'eltran.h'
+      include 'hdata.h'
+      include 'iofile.h'
+      include 'umac1.h'                 ! utx(1)
+      include 'comblk.h'
+
+      integer       ::  ndf             ! Max DOF's/node
+      integer       ::  ndm             ! Mesh spatial dimention
+      integer       ::  nst             ! Matrix 's' dimension
+      integer       ::  isw             ! Switch for solution steps
+      integer       ::  ix(*)           ! Element global nodes
+      real (kind=8) ::  d(*)            ! Material set parameters
+      real (kind=8) ::  ul(ndf,nen,*)   ! Local nodal solutions
+      real (kind=8) ::  xl(ndm,*)       ! Local nodal coordinates
+      real (kind=8) ::  tl(*)           ! Local nodal load array
+      real (kind=8) ::  s(nst,nst,*)    ! Element matrix
+      real (kind=8) ::  p(ndf,*)        ! Element vector    
+      logical       ::  symmetric       ! Is matrix symmetric
+      logical       ::  errck           ! For error in inputs
+
+      character (len=50) :: datades(<*Min[10,Length[SMSDomainDataNames]]*>)
+      logical       ::  pinput
+      integer       ::  dofacegen,ngpo
+      real (kind=8) ::  td(10)
+      real (kind=8) ::  v(<*SMSWorkLength*>)   ! AceGen Storage
+      real (kind=8), allocatable :: ua(:,:)    ! AceGen Storage
+      real (kind=8), allocatable :: k(:,:)     ! AceGen stiffness
+      real (kind=8), allocatable :: c(:,:)     ! AceGen damping
+      real (kind=8), allocatable :: m(:,:)     ! AceGen mass
+      real (kind=8), allocatable :: r(:)       ! AceGen residual
+
+      integer       :: i,j,kk,n                 ! Loop variables
+      real (kind=8) :: gp(4,25) 
+
+!     Limits: 10 PDE; 30 DOF total
+      integer       :: npde, nelu(10),du(10),dofu(10,30)
+      integer       :: hist1, hist3
+
+      save
+
+      symmetric=""<*If[SMSSymmetricTangent,".true.",".false."]*>""
+
+      if(isw.ne.1) then
+
+!       Read number of PDEs
+        npde = nint(d(100))
+
+      endif
+ 
+      if(isw.lt.0) then
+        utx(1) = <*SMSSessionName*>
+
+      elseif(isw.eq.1) then                ! Input material set data
+        pstyp = ndm                        ! Sets plot dimension (1,2,3)
+
+!       Read number pdes 
+        nelu(:)   = 0
+        du(:)     = 0
+        dofu(:,:) = 0
+        call ""<*SMSSessionName*>""_ISW01(v,npde,du,nelu,hist1,hist3)
+
+!       Build 'dofu'
+        kk = 0
+        do i = 1,npde
+          do j = 1, du(i)
+            kk = kk + 1
+            dofu(i,j) = kk
+          end do ! j
+        end do ! i
+
+!       Initialize number of history variables
+        nh1 = hist1
+        nh3 = hist3
+
+!       Save number of pde
+        d(100) = dble(npde)
+
+!       Build size of AceGen arrays
+        dofacegen = 0
+        do n = 1,npde
+          dofacegen = dofacegen + nelu(n)*du(n)
+        end do ! n
+
+        if( .not.allocated(r) ) then
+          if(debug) write(*,*) ' --> Allocate: DOFACEGEN =',dofacegen
+          allocate( r(dofacegen) )
+          allocate( m(dofacegen,dofacegen) )
+          allocate( c(dofacegen,dofacegen) )
+          allocate( k(dofacegen,dofacegen) )
+          allocate( ua(6,dofacegen) )
+        endif
+
+!       Material properties
+        errck = pinput(td,<*Min[10,Length[SMSDomainDataNames]]*>)
+        d(1:<*Min[10,Length[SMSDomainDataNames]]*>) = td(1:<*Min[10,Length[SMSDomainDataNames]]*>)
+
+!       Output material set data
+        ""<*StringJoin@@
+        MapIndexed["\n        datades("<>ToString[#2[[1]]]<>")='"<>SMCToString[#1,FullForm,50]<>"'\n"&, SMSDomainDataNames]*>""
+        write(iow,"(10x,f15.5,A3,A)")
+     #     (d(i)," = ",datades(i),i=1,<*Length[SMSDomainDataNames]*>)
+
+!       Set active dof's
+        call SB_activedofs(du,dofu,nelu,npde,ix,ndf)
+
+!       Set quadrature points
+        nel = maxval(nelu(1:npde))
+        call SB_Int(ndm, nel, ngpo,gp)
+
+      elseif(isw.eq.3 .or.isw.eq.6) then   ! Compute residual/tangent
+
+!       Map dofs
+        call SB_ua_set(ul,ndf,nen,ua,du,dofu,nelu,npde)
+
+        if(isw.eq.3) then
+
+!         Initialize element arrays
+          k(:,:) = 0.0d0
+          c(:,:) = 0.0d0
+          m(:,:) = 0.0d0
+          r(:)   = 0.0d0
+
+!         Call the routine for ISW=3
+          call ""<*SMSSessionName*>""_ISW03(v,d,xl,ua,k,c,m,r,hr(nh1),hr(nh2),gp,ngpo)
+
+!         Print values for debug mode
+          if(debug) then
+            call mprint(k,dofacegen,dofacegen,dofacegen,'ACE_K')
+            call mprint(c,dofacegen,dofacegen,dofacegen,'ACE_C')
+            call mprint(m,dofacegen,dofacegen,dofacegen,'ACE_M')
+            call mprint(r,1,dofacegen,1,'ACE_R')
+          endif
+
+!         Combine tangent
+          k(:,:) = k(:,:)*ctan(1) + c(:,:)*ctan(2) + m(:,:)*ctan(3)
+
+!         Fill symmetric part
+          if(symmetric) then
+            do j = 1,dofacegen
+              do i = j+1,dofacegen
+                k(i,j) = k(j,i)
+              end do ! i
+            end do ! j
+          end if
+
+!         Map to FEAP storage
+          call SB_ace2nst(k,r,dofacegen,s,p,nst,du,dofu,nelu,npde,isw)
+
+        elseif(isw.eq.6) then
+
+!         Initialize element arrays
+          r(:)   = 0.0d0
+
+!         Call the routine for ISW=6
+          call ""<*SMSSessionName*>""_ISW06(v,d,xl,ua,r,hr(nh1),hr(nh2),gp,ngpo)
+
+!         Map to FEAP storage
+          call SB_ace2nst(k,r,dofacegen,s,p,nst,du,dofu,nelu,npde,isw)
+
+        endif
+
+      elseif(isw.eq.4 .or.isw.eq.8) then   ! Output/plot element data
+
+      elseif(isw.eq.5) then                ! Compute mass matrix
+
+!       Map dofs
+        call SB_ua_set(ul,ndf,nen,ua,du,dofu,nelu,npde)
+
+!       Initialize element arrays
+        m(:,:) = 0.0d0
+        r(:)   = 0.0d0
+
+!       Call the routine for ISW=5
+        call ""<*SMSSessionName*>""_ISW05(v,d,xl,ua,m,r,hr(nh1),hr(nh2),gp,ngpo)
+
+      elseif(isw.eq.9) then                ! Compute damping matrix
+
+!       Map dofs
+        call SB_ua_set(ul,ndf,nen,ua,du,dofu,nelu,npde)
+
+!       Initialize element arrays
+        c(:,:) = 0.0d0
+        r(:)   = 0.0d0
+
+!       Call the routine for ISW=9
+        call ""<*SMSSessionName*>""_ISW09(v,d,xl,ua,c,r,hr(nh1),hr(nh2),gp,ngpo)
+
+      endif
+
+      end subroutine ""<*SMSSessionName*>""

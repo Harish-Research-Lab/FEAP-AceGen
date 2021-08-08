@@ -48,7 +48,7 @@ CSURf
 MATErial 1
     SOLId
     FINIte VOLUme 2
-    ELAStic MNEOHook 10000 0.25
+    ELAStic YEOH 10000 0.25 1000 100
 
 END
 

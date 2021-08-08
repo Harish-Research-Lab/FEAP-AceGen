@@ -46,9 +46,8 @@ CSURf
     2 h h 4500.
 
 MATErial 1
-    SOLId
-    FINIte VOLUme 2
-    ELAStic MNEOHook 10000 0.25
+    user 19
+        10000 0.25 1000 100
 
 END
 
