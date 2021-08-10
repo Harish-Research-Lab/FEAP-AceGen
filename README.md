@@ -10,7 +10,8 @@
 
 ## How to cite
 
-Harish, A. B. and Taylor, R. L. and Govindjee, S., "Automated Generation of User Elements (UEL) for FEAP," SEMM Report UCB/SEMM-2021/01 (2021)
+[Harish, A. B. and Taylor, R. L. and Govindjee, S., "Automated Generation of User Elements (UEL) for FEAP," SEMM Report UCB/SEMM-2021/01 (2021)](
+http://faculty.ce.berkeley.edu/sanjay/ucb_semm_2021_01.pdf)
 
 [Top](#Automated-generation-of-user-elements-for-FEAP)
 
@@ -136,9 +137,9 @@ The following softwares are required to generate and use the user elements.
 
 3. Zienkiewicz, O., Taylor, R., and Fox, D., The Finite Element Method for Solid and Structural Mechanics, 7th Edition,Elsevier, Oxford, 2013.
 
-4. Taylor, R., and Govindjee, S., FEAP - A Finite Element Analysis Program, User Manual, University of California,Berkeley.,http://projects.ce.berkeley.edu/feap.
+4. Taylor, R., and Govindjee, S., FEAP - A Finite Element Analysis Program, User Manual, University of California,Berkeley (2020),http://projects.ce.berkeley.edu/feap.
 
-5. Taylor, R., and Govindjee, S., FEAP - A Finite Element Analysis Program, Example Manual, University of California,Berkeley.,http://projects.ce.berkeley.edu/feap.
+5. Taylor, R., and Govindjee, S., FEAP - A Finite Element Analysis Program, Example Manual, University of California,Berkeley (2020),http://projects.ce.berkeley.edu/feap.
 
 6. Korelc, J. and Wriggers, P., Automation of Finite Element Methods, Springer International Publishing, Switzerland, 2016
 
