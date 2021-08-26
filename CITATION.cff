@@ -1,0 +1,31 @@
+cff-version: 1.0.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Harish"
+  given-names: "Ajay B."
+  orcid: "https://orcid.org/0000-0000-0000-0000"
+- family-names: "Taylor"
+  given-names: "Robert L."
+  orcid: "https://orcid.org/0000-0000-0000-0000"
+- family-names: "Govindjee"
+  given-names: "Sanjay"
+  orcid: "https://orcid.org/0000-0000-0000-0000"
+title: "FEAP-AceGen"
+version: 1.0.2
+date-released: 2017-08-17
+url: "https://github.com/bhajay/FEAP-AceGen"
+preferred-citation:
+  type: report
+  authors:
+  - family-names: "Harish"
+  	given-names: "Ajay B."
+	orcid: "https://orcid.org/0000-0000-0000-0000"
+  - family-names: "Taylor"
+	given-names: "Robert L."
+	orcid: "https://orcid.org/0000-0000-0000-0000"
+  - family-names: "Govindjee"
+	given-names: "Sanjay"
+	orcid: "https://orcid.org/0000-0000-0000-0000"
+  journal: "SEMM Report UCB/SEMM-2021/01"
+  title: "Automation of user element generation for FEAP"
+  year: 2021
