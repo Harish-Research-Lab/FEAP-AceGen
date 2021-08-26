@@ -20,20 +20,19 @@ version: "v.1.0.2"
 ...
 
 preferred-citation:
-  type: article
+  type: techreport
   authors:
-  - family-names: "Lisa"
-    given-names: "Mona"
-    orcid: "https://orcid.org/0000-0000-0000-0000"
-  - family-names: "Bot"
-    given-names: "Hew"
-    orcid: "https://orcid.org/0000-0000-0000-0000"
-  doi: "10.0000/00000"
-  journal: "Journal Title"
-  month: 9
-  start: 1 # First page number
-  end: 10 # Last page number
-  title: "My awesome research software"
-  issue: 1
-  volume: 1
+  -
+    family-names: Harish
+    given-names: "Ajay B"
+    orcid: "https://orcid.org/https://orcid.org/0000-0001-5234-7047"
+  -
+    family-names: Taylor
+    given-names: "Robert L"
+  -
+    family-names: Govindjee
+    given-names: Sanjay
+  journal: "SEMM Report"
+  title: "Automation of user element generation for FEAP"
+  number: UCB/SEMM-2021/01
   year: 2021
