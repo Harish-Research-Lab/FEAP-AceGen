@@ -1,4 +1,6 @@
-  authors: 
+# YAML 1.2
+---
+authors: 
   -
     family-names: Harish
     given-names: "Ajay B"
